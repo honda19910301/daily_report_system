@@ -31,6 +31,12 @@ public class ReportValidator {
             errors.add(contentError);
         }
 
+        //重要度のチェック
+        String importanceError = validateImportance(rv.getImportance());
+        if (!importanceError.equals("")) {
+            errors.add(importanceError);
+        }
+
         return errors;
     }
 
@@ -56,6 +62,20 @@ public class ReportValidator {
     private static String validateContent(String content) {
         if (content == null || content.equals("")) {
             return MessageConst.E_NOCONTENT.getMessage();
+        }
+
+        //入力値がある場合は空文字を返却
+        return "";
+    }
+
+    /**
+     * 重要度に入力値があるかをチェックし、入力値がなければエラーメッセージを返却
+     * @param importance 重要度
+     * @return エラーメッセージ
+     */
+    private static String validateImportance(String importance) {
+        if (importance == null || importance.equals("")) {
+            return MessageConst.E_NOTITLE.getMessage();
         }
 
         //入力値がある場合は空文字を返却

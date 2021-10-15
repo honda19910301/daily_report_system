@@ -28,6 +28,20 @@
 <label for="${AttributeConst.REP_CONTENT.getValue()}">内容</label><br />
 <textarea name="${AttributeConst.REP_CONTENT.getValue()}" rows="10" cols="50">${report.content}</textarea>
 <br /><br />
+
+<label for="${AttributeConst.REP_IMPORTANCE.getValue()}">重要度</label><br />
+
+<select name="${AttributeConst.REP_IMPORTANCE.getValue()}">
+    <option <c:if test="${report.importance == NULL}">selected</c:if>>選択肢</option>
+    <option <c:if test="${report.importance == '☆☆☆☆☆'}">selected</c:if> value="☆☆☆☆☆">☆☆☆☆☆</option>
+    <option <c:if test="${report.importance == '★☆☆☆☆'}">selected</c:if> value="★☆☆☆☆">★☆☆☆☆</option>
+    <option <c:if test="${report.importance == '★★☆☆☆'}">selected</c:if> value="★★☆☆☆">★★☆☆☆</option>
+    <option <c:if test="${report.importance == '★★★☆☆'}">selected</c:if> value="★★★☆☆">★★★☆☆</option>
+    <option <c:if test="${report.importance == '★★★★☆'}">selected</c:if> value="★★★★☆">★★★★☆</option>
+    <option <c:if test="${report.importance == '★★★★★'}">selected</c:if> value="★★★★★">★★★★★</option>
+</select>
+<br /><br />
+
 <input type="hidden" name="${AttributeConst.REP_ID.getValue()}" value="${report.id}" />
 <input type="hidden" name="${AttributeConst.TOKEN.getValue()}" value="${_token}" />
 <button type="submit">投稿</button>

@@ -94,4 +94,10 @@ public class Report {
     @Column(name = JpaConst.REP_COL_UPDATED_AT, nullable = false)
     private LocalDateTime updatedAt;
 
+    /**
+     * 重要度
+     */
+    @Column(name = JpaConst.REP_COL_IMPORTANCE, nullable = false)
+    private String importance;
+
 }

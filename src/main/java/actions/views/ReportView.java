@@ -53,4 +53,8 @@ public class ReportView {
      */
     private LocalDateTime updatedAt;
 
+    /**
+     * 重要度
+     */
+    private String importance;
 }
